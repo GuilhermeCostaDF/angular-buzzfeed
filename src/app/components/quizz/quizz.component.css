@@ -75,3 +75,9 @@
   align-items: center;
   margin-top: 40px;
 }
+
+.quizz_results > p {
+  margin-top: 40px;
+  font-size: 20px;
+  font-weight: bold;
+}
