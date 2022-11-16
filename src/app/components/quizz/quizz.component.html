@@ -4,37 +4,15 @@
     <h3>{{ title }}</h3>
   </div>
   <div class="quizz_questions">
-    <h3>Questão selecionada</h3>
+    <h3>{{ questionSelected.question }}</h3>
   </div>
   <div class="quizz_options">
-    <button class="btn-option">
-      Opção OpçãoOpção
-      Opção OpçãoOpção
-      Opção OpçãoOpção
-      Opção OpçãoOpção
-    </button>
-    <button class="btn-option">
-      Opção OpçãoOpção
-      Opção OpçãoOpção
-      Opção OpçãoOpção
-      Opção OpçãoOpção
-      Opção OpçãoOpção
-
-    </button>
-    <button class="btn-option">
-      Opção OpçãoOpção
-      Opção OpçãoOpção
-      Opção OpçãoOpção
-      Opção OpçãoOpção
-
-    </button>
-    <button class="btn-option">
-      Opção OpçãoOpção
-      Opção OpçãoOpção
-      Opção OpçãoOpção
-      Opção OpçãoOpção
-      Opção OpçãoOpção
-      Opção
+    <button
+      *ngFor="let option of questionSelected.options"
+      (click)= "playerChoose(option.alias)"
+      (click) = "nextStep()"
+      class="btn-option">
+      {{option.name}}
     </button>
   </div>
   <div *ngIf=finished class="quizz_results">
